@@ -5,7 +5,7 @@ pipeline {
         steps {
           sh ‘tidy -q -e *.html’
         }
-    stages {
+      }
        stage('Upload to AWS') {
              steps {
                  withAWS(region: 'us-east-1', credentials: 'awsstatic') {
@@ -16,5 +16,4 @@ pipeline {
         }
     }
 }
-}
-}
+
